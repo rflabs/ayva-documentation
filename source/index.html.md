@@ -3,7 +3,8 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
-  - ruby
+  - java
+  - python
 
 toc_footers:
   - <a href='https://github.com/rflabs/ayva'>Ayva Library</a>
@@ -27,9 +28,13 @@ The Ayva framework is built up of the following:
 
 ![alt text](https://storage.googleapis.com/ayva-helloworld.appspot.com/ayva-architecture-v2.png)
 
+<aside class="notice">
+Currently only avalable on Node.js
+</aside>
+
 ## Installation
 
-npm install -g ayva
+<code>npm install -g ayva</code>
 
 
 ## Concepts
@@ -40,22 +45,10 @@ npm install -g ayva
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
 ```
 
 ```javascript
