@@ -222,18 +222,40 @@
       <div id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#architecture" class="toc-h2 toc-link" data-title="architecture">Architecture</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#setup" class="toc-h1 toc-link" data-title="setup">Setup</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ayva-cli" class="toc-h2 toc-link" data-title="ayva-cli">Ayva CLI</a>
+                  </li>
                   <li>
                     <a href="#amazon-alexa" class="toc-h2 toc-link" data-title="amazon-alexa">Amazon Alexa</a>
                   </li>
                   <li>
                     <a href="#dialogflow-google" class="toc-h2 toc-link" data-title="dialogflow-google">Dialogflow (Google)</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#hello-ayva" class="toc-h1 toc-link" data-title="hello-ayva">Hello Ayva</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#ayva-cli" class="toc-h2 toc-link" data-title="ayva-cli">Ayva CLI</a>
+                    <a href="#prerequisites" class="toc-h2 toc-link" data-title="prerequisites">Prerequisites</a>
+                  </li>
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="create">Create</a>
+                  </li>
+                  <li>
+                    <a href="#deploy" class="toc-h2 toc-link" data-title="deploy">Deploy</a>
+                  </li>
+                  <li>
+                    <a href="#run" class="toc-h2 toc-link" data-title="run">Run</a>
                   </li>
               </ul>
           </li>
@@ -261,13 +283,13 @@
             <a href="#ayva-cli-reference" class="toc-h1 toc-link" data-title="ayva-cli-reference">Ayva CLI Reference</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#create" class="toc-h2 toc-link" data-title="create">create</a>
+                    <a href="#create-2" class="toc-h2 toc-link" data-title="create">create</a>
                   </li>
                   <li>
-                    <a href="#deploy" class="toc-h2 toc-link" data-title="deploy">deploy</a>
+                    <a href="#deploy-2" class="toc-h2 toc-link" data-title="deploy">deploy</a>
                   </li>
                   <li>
-                    <a href="#run" class="toc-h2 toc-link" data-title="run">run</a>
+                    <a href="#run-2" class="toc-h2 toc-link" data-title="run">run</a>
                   </li>
               </ul>
           </li>
@@ -286,7 +308,7 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Ayva is an open-source cross-platform developer framework used to build voice assistant apps. The features and tools provided in this framework are platform agnostic, allowing developers to build once and deploy on both Google Assistant and Alexa. </p>
 
-<p>The Ayva framework is built up of the following:</p>
+<p><b>The Ayva framework is built up of the following:</b></p>
 
 <ul>
 <li>Ayva Library</li>
@@ -294,12 +316,69 @@
 <li>Middleware tools</li>
 </ul>
 
+<p><b>Benefits</b></p>
+
+<ul>
+<li>No need to manually define the interaction model in every AI platform.</li>
+<li>Voice app will have the same interaction model (user experience) across all voice assistants.</li>
+</ul>
+<h2 id='architecture'>Architecture</h2>
 <p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/ayva-architecture-v2.png" alt="ayva-architecture" /></p>
 
 <aside class="notice">
 Currently only avalable on Node.js
 </aside>
-<h1 id='setup'>Setup</h1><h2 id='amazon-alexa'>Amazon Alexa</h2>
+<h1 id='setup'>Setup</h1>
+<p>In order to fully experience Ayva&#39;s end-to-end development process, some prerequisite setup is required. </p>
+
+<p><b>All</b></p>
+
+<ul>
+<li><a href="https://www.npmjs.com/package/ayva-cli">Ayva CLI</a></li>
+<li><a href="https://bespoken.io/bst/">Bespoken</a></li>
+</ul>
+
+<p><b>Amazon Alexa</b></p>
+
+<ul>
+<li><a href="https://developer.amazon.com/">Amazon developer account</a></li>
+<li><a href="https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html">Amazon Ask command line interface (CLI)</a></li>
+<li><a href="https://developer.amazon.com/edw/home.html#/skill/create/">Alexa skill id</a></li>
+</ul>
+
+<p><b>Google Assistant (Dialogflow)</b></p>
+
+<ul>
+<li><a href="https://console.dialogflow.com/api-client/#/login">Dialogflow developer account</a></li>
+<li><a href="https://console.dialogflow.com/api-client/#/newAgent">Dialogflow agent developer id</a></li>
+</ul>
+<h2 id='ayva-cli'>Ayva CLI</h2>
+<p></br></p>
+
+<blockquote>
+<p>Global npm install of Ayva command line interface</p>
+</blockquote>
+<pre class="highlight plaintext"><code>npm install -g ayva-cli
+</code></pre>
+<p><b>1. Install <a href="https://www.npmjs.com/package/ayva-cli">Ayva CLI</a></b></p>
+
+<p><code>npm install -g ayva-cli</code></p>
+
+<p>The Ayva CLI will allow you to create new voice assistant projects and deploy interaction models to any supported voice assistant platform. </p>
+
+<p></br></p>
+
+<blockquote>
+<p>Global npm install of Bespoken CLI tools</p>
+</blockquote>
+<pre class="highlight plaintext"><code>npm install -g bespoken-tools
+</code></pre>
+<p><b>2. Install <a href="https://www.npmjs.com/package/bespoken-tools">Bespoken CLI tools</a></b></p>
+
+<p><code>npm install -g bespoken-tools</code></p>
+
+<p>The <code>Ayva deploy</code> command in our CLI utilizes <a href="https://bespoken.io/bst/">Bespoken</a> to create a local proxy url. This greatly increase the efficiecy of local development. Using a local proxy avoids the necessity to deploy your code on every update.</p>
+<h2 id='amazon-alexa'>Amazon Alexa</h2>
 <p></br>
 <b>1. Create a <a href="https://developer.amazon.com/">Amazon developer account on Amazon</a></b></p>
 
@@ -337,13 +416,6 @@ Currently only avalable on Node.js
 <p>In order to utilize <code>Ayva deploy</code>, you will need to first create a new Alexa skill to obtain your <b>Alexa Skill Id</b>. This is what Ayva will use to configure the interaction model for your voice assistant app.</p>
 
 <p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/alexa-id-v3.png" alt="alexa-id" /></p>
-
-<p><b>Benefits:</b></p>
-
-<ul>
-<li>No need to manually define the interaction model in Alexa skills kit</li>
-<li>Your app will have the same interaction model across all voice assistants.</li>
-</ul>
 <h2 id='dialogflow-google'>Dialogflow (Google)</h2>
 <p></br>
 <b>1. Create a <a href="https://console.dialogflow.com/api-client/#/login">Dialogflow developer account</a></b></p>
@@ -354,40 +426,72 @@ Currently only avalable on Node.js
 <p>Ayva currently uses <a href="https://dialogflow.com/docs/reference/agent/">Dialogflow V1 API</a>. In order to utilize <code>Ayva deploy</code>, you will need to first create a new Dialogflow agent to obtain your <b>Developer access token</b>. This is what Ayva will use to configure the interaction model for your voice assitant app.</p>
 
 <p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/df-devToken.png" alt="df-devToken" /></p>
+<h1 id='hello-ayva'>Hello Ayva</h1>
+<p>This section will explain how to locally deploy and interact with our &#39;Hello Ayva&#39; voice app on your own voice assitant device. </p>
 
-<p><b>Benefits:</b></p>
+<p>This tutorial will walk you through the basic commands in the Ayva CLI to guide you through each phase of the development and release process. After this tutorial, you will know how to use the Ayva library to build your very own voice app.</p>
+<h2 id='prerequisites'>Prerequisites</h2>
+<p>Please follow the instructions in Setup before continuing. If you&#39;d like to deploy on both Alexa and Google Assistant, please ensure you complete all the requirements outined in the previous section. </p>
+
+<p><b>Any</b></p>
 
 <ul>
-<li>No need to manually define the interaction model in Dialogflow.</li>
-<li>Your app will have the same interaction model across all voice assistants.</li>
+<li><a href="https://www.npmjs.com/package/ayva-cli">Ayva CLI</a></li>
+<li><a href="https://bespoken.io/bst/">Bespoken</a></li>
 </ul>
-<h2 id='ayva-cli'>Ayva CLI</h2>
-<p></br></p>
+
+<p><b>Amazon Alexa</b></p>
+
+<ul>
+<li><a href="https://developer.amazon.com/">Amazon developer account</a></li>
+<li><a href="https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html">Amazon Ask command line interface (CLI)</a></li>
+<li><a href="https://developer.amazon.com/edw/home.html#/skill/create/">Alexa skill id</a></li>
+</ul>
+
+<p><b>Google Assistant (Dialogflow)</b></p>
+
+<ul>
+<li><a href="https://console.dialogflow.com/api-client/#/login">Dialogflow developer account</a></li>
+<li><a href="https://console.dialogflow.com/api-client/#/newAgent">Dialogflow agent developer id</a></li>
+</ul>
+<h2 id='create'>Create</h2>
+<blockquote>
+<p>Clone &#39;Hello Ayva&#39; app and configure voice assistant credentials</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">ayva</span> <span class="nx">create</span>
+</code></pre>
+<p><code>ayva create</code></p>
+
+<p>This command will clone our &#39;Hello Ayva&#39; app into the folder this command was run in, as well as capture the necessary information to push the app&#39;s interaction model to the selected voice asssitant platform.</p>
+
+<p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/ayva-create-v2.png" alt="ayva-create" /></p>
 
 <blockquote>
-<p>Global npm install of Ayva command line interface</p>
+<p>Alexa config that will be generated in ayva.json</p>
 </blockquote>
-<pre class="highlight plaintext"><code>npm install -g ayva-cli
-</code></pre>
-<p><b>1. Install <a href="https://www.npmjs.com/package/ayva-cli">Ayva CLI</a></b></p>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span><span class="s2">"invocationPhrase"</span><span class="p">:</span><span class="s2">"hello ayva"</span><span class="p">,</span>
+  <span class="s2">"alexa"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"skillId"</span><span class="p">:</span><span class="s2">"&lt;Alexa skill id&gt;"</span><span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre><h3 id='alexa-skill-id'>Alexa skill id</h3>
+<p>Alexa configuration requires the developer define the Alexa skill id and the skill&#39;s invocation name. We recommend using the name of your application as the invocation name (i.e &#39;Hello Ayva&#39; in this tutorial)</p>
 
-<p><code>npm install -g ayva-cli</code></p>
-
-<p>The Ayva CLI will allow you to create new voice assistant projects and deploy interaction models to any supported voice assistant platform. </p>
-
-<p></br></p>
+<p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/alexa-step1.png" alt="alexa-step1" /></p>
 
 <blockquote>
-<p>Global npm install of Bespoken CLI tools</p>
+<p>Dialogflow config that will be generated in ayva.json</p>
 </blockquote>
-<pre class="highlight plaintext"><code>npm install -g bespoken-tools
-</code></pre>
-<p><b>2. Install <a href="https://www.npmjs.com/package/bespoken-tools">Bespoken CLI tools</a></b></p>
+<pre class="highlight javascript tab-javascript"><code><span class="s2">"dialogflow"</span><span class="p">:{</span>
+  <span class="s2">"developerAccessToken"</span><span class="p">:</span><span class="s2">"&lt;agent developer access token&gt;"</span>
+<span class="p">},</span>
+</code></pre><h3 id='dialogflow-developer-access-token'>Dialogflow Developer Access Token</h3>
+<p>Dialogflow configuration requires the developer define the Dialogflow agent id.</p>
 
-<p><code>npm install -g bespoken-tools</code></p>
+<p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/df-step1.png" alt="df-step1" /></p>
 
-<p>The <code>Ayva deploy</code> command in our CLI utilizes <a href="https://bespoken.io/bst/">Bespoken</a> to create a local proxy url. This greatly increase the efficiecy of local development. Using a local proxy avoids the necessity to deploy your code on every update.</p>
-<h1 id='ayva-library-reference'>Ayva Library Reference</h1><h2 id='initialization'>Initialization</h2><h2 id='state-management'>State management</h2><h2 id='speech-models'>Speech Models</h2><h2 id='intents'>Intents</h2><h2 id='error-handling'>Error Handling</h2><h1 id='ayva-cli-reference'>Ayva CLI Reference</h1><h2 id='create'>create</h2><h2 id='deploy'>deploy</h2><h2 id='run'>run</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p><img src="https://storage.googleapis.com/ayva-helloworld.appspot.com/df-step2.png" alt="df-step2" /></p>
+<h2 id='deploy'>Deploy</h2><h2 id='run'>Run</h2><h1 id='ayva-library-reference'>Ayva Library Reference</h1><h2 id='initialization'>Initialization</h2><h2 id='state-management'>State management</h2><h2 id='speech-models'>Speech Models</h2><h2 id='intents'>Intents</h2><h2 id='error-handling'>Error Handling</h2><h1 id='ayva-cli-reference'>Ayva CLI Reference</h1><h2 id='create-2'>create</h2><h2 id='deploy-2'>deploy</h2><h2 id='run-2'>run</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
