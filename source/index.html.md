@@ -26,51 +26,112 @@ The Ayva framework is built up of the following:
 * Ayva CLI
 * Middleware tools
 
-![alt text](https://storage.googleapis.com/ayva-helloworld.appspot.com/ayva-architecture-v2.png)
+![ayva-architecture](https://storage.googleapis.com/ayva-helloworld.appspot.com/ayva-architecture-v2.png)
 
 <aside class="notice">
 Currently only avalable on Node.js
 </aside>
 
-## Installation
+# Setup
 
-<code>npm install -g ayva</code>
+## Amazon Alexa
 
+</br>
+<b>1. Create a [Amazon developer account on Amazon](https://developer.amazon.com/)</b>
 
-## Concepts
+</br>
 
-## Hello world tutorial
-
-
-
-> To authorize, use this code:
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> Global npm install of Amazon Ask CLI
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
+npm install -g ask-cli
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+<b>2. Install [Amazon Ask command line interface (CLI)](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html)</b>
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+<code>npm install -g ask-cli</code>
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+(If you're using Linux, the installation my require <code>sudo</code>)
 
-`Authorization: meowmeowmeow`
+</br>
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+> Initialize Amazon developer account credentials
+
+```javascript
+ask init
+```
+
+<b>3. Initialize Ask CLI with your Amazon developer account credentials</b>
+
+The first time you use this CLI, you must call the <code>init</code> command to initialize the tool with your Amazon developer account credentials.
+
+<code>ask init</code>
+
+You will be prompted to name your profile (default by default), choose the AWS profile to use, and to log in to your Amazon developer account. Once the initialization is complete, you can use ASK CLI to manage your skill.
+
+</br>
+<b>4. Create a new Alexa skill with [Alexa skills kit](https://developer.amazon.com/edw/home.html#/skill/create/)</b>
+
+In order to utilize <code>Ayva deploy</code>, you will need to first create a new Alexa skill to obtain your <b>Alexa Skill Id</b>. This is what Ayva will use to configure the interaction model for your voice assistant app.
+
+![alexa-id](https://storage.googleapis.com/ayva-helloworld.appspot.com/alexa-id-v3.png)
 
 
-# Ayva Library
+<b>Benefits:</b>
+
+* No need to manually define the interaction model in Alexa skills kit
+* Your app will have the same interaction model across all voice assistants.
+
+
+
+## Dialogflow (Google)
+
+</br>
+<b>1. Create a [Dialogflow developer account](https://console.dialogflow.com/api-client/#/login)</b>
+
+</br>
+<b>2. Create a [new Dialogflow agent](https://console.dialogflow.com/api-client/#/newAgent)</b>
+
+Ayva currently uses [Dialogflow V1 API](https://dialogflow.com/docs/reference/agent/). In order to utilize <code>Ayva deploy</code>, you will need to first create a new Dialogflow agent to obtain your <b>Developer access token</b>. This is what Ayva will use to configure the interaction model for your voice assitant app.
+
+![df-devToken](https://storage.googleapis.com/ayva-helloworld.appspot.com/df-devToken.png)
+
+<b>Benefits:</b>
+
+* No need to manually define the interaction model in Dialogflow.
+* Your app will have the same interaction model across all voice assistants.
+
+## Ayva CLI
+
+</br>
+
+> Global npm install of Ayva command line interface
+
+```javacript
+npm install -g ayva-cli
+```
+
+<b>1. Install [Ayva CLI](https://www.npmjs.com/package/ayva-cli)</b>
+
+<code>npm install -g ayva-cli</code>
+
+The Ayva CLI will allow you to create new voice assistant projects and deploy interaction models to any supported voice assistant platform. 
+
+</br>
+
+> Global npm install of Bespoken CLI tools
+
+```javacript
+npm install -g bespoken-tools
+```
+
+<b>2. Install [Bespoken CLI tools](https://www.npmjs.com/package/bespoken-tools)</b>
+
+The <code>Ayva deploy</code> command in our CLI utilizes [Bespoken](https://bespoken.io/bst/) to create a local proxy url. This greatly increase the efficiecy of local development. Using a local proxy avoids the necessity to deploy your code on every update.
+
+<code>npm install -g bespoken-tools</code>
+
+# Ayva Library Reference
 
 ## Initialization
 
@@ -83,7 +144,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 ## Error Handling
 
 
-# Ayva CLI
+# Ayva CLI Reference
 
 ## create
 
