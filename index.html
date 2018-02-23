@@ -384,9 +384,9 @@ Currently only avalable on Node.js
 </code></pre>
 <p><b>2. Install <a href="https://www.npmjs.com/package/bespoken-tools">Bespoken CLI tools</a></b></p>
 
-<p>The <code>Ayva deploy</code> command in our CLI utilizes <a href="https://bespoken.io/bst/">Bespoken</a> to create a local proxy url. This greatly increase the efficiecy of local development. Using a local proxy avoids the necessity to deploy your code on every update.</p>
-
 <p><code>npm install -g bespoken-tools</code></p>
+
+<p>The <code>Ayva deploy</code> command in our CLI utilizes <a href="https://bespoken.io/bst/">Bespoken</a> to create a local proxy url. This greatly increase the efficiecy of local development. Using a local proxy avoids the necessity to deploy your code on every update.</p>
 <h1 id='ayva-library-reference'>Ayva Library Reference</h1><h2 id='initialization'>Initialization</h2><h2 id='state-management'>State management</h2><h2 id='speech-models'>Speech Models</h2><h2 id='intents'>Intents</h2><h2 id='error-handling'>Error Handling</h2><h1 id='ayva-cli-reference'>Ayva CLI Reference</h1><h2 id='create'>create</h2><h2 id='deploy'>deploy</h2><h2 id='run'>run</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
