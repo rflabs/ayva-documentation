@@ -127,9 +127,11 @@ npm install -g bespoken-tools
 
 <b>2. Install [Bespoken CLI tools](https://www.npmjs.com/package/bespoken-tools)</b>
 
+<code>npm install -g bespoken-tools</code>
+
 The <code>Ayva deploy</code> command in our CLI utilizes [Bespoken](https://bespoken.io/bst/) to create a local proxy url. This greatly increase the efficiecy of local development. Using a local proxy avoids the necessity to deploy your code on every update.
 
-<code>npm install -g bespoken-tools</code>
+
 
 # Ayva Library Reference
 
